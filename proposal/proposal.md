@@ -30,7 +30,7 @@
     - https://www.nobelprize.org/prizes/physics/2020/genzel/facts/
     - https://www.nobelprize.org/prizes/physics/2020/ghez/facts/
 
-1. まとめ（共同）
+4. まとめ（共同）
 
 - ケプラーの法則の普遍性
 - 質疑応答
