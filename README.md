@@ -1,50 +1,59 @@
-<p align="center">
-  <a href="https://revealjs.com">
-  <img src="https://hakim-static.s3.amazonaws.com/reveal-js/logo/v1/reveal-black-text-sticker.png" alt="reveal.js" width="500">
-  </a>
-  <br><br>
-  <a href="https://github.com/hakimel/reveal.js/actions"><img src="https://github.com/hakimel/reveal.js/workflows/tests/badge.svg"></a>
-  <a href="https://slides.com/"><img src="https://s3.amazonaws.com/static.slid.es/images/slides-github-banner-320x40.png?1" alt="Slides" width="160" height="20"></a>
-</p>
+# vrc-kd-tree-lt
 
-reveal.js is an open source HTML presentation framework. It enables anyone with a web browser to create beautiful presentations for free. Check out the live demo at [revealjs.com](https://revealjs.com/).
+## 概要
 
-The framework comes with a powerful feature set including [nested slides](https://revealjs.com/vertical-slides/), [Markdown support](https://revealjs.com/markdown/), [Auto-Animate](https://revealjs.com/auto-animate/), [PDF export](https://revealjs.com/pdf-export/), [speaker notes](https://revealjs.com/speaker-view/), [LaTeX typesetting](https://revealjs.com/math/), [syntax highlighted code](https://revealjs.com/code/) and an [extensive API](https://revealjs.com/api/).
+2025年12月22日、VRChatの技術系イベント「ブラックホール集会」のLTセッションでの発表スライドです。
+BH集会主催の[黒洞ひかりさん](https://x.com/kokudo_hikari)とのコラボ企画です！
 
----
+## 開発環境
 
-Want to create reveal.js presentation in a graphical editor? Try <https://slides.com>. It's made by the same people behind reveal.js.
+[reveal.js](https://github.com/hakimel/reveal.js) によってスライドの作成をしています。
+Node.js, npmが利用できる環境で、以下のコマンドで開発環境の構築ができます: 
 
----
+```bash
+npm install
+```
 
-### Sponsors
-Hakim's open source work is supported by <a href="https://github.com/sponsors/hakimel">GitHub sponsors</a>. Special thanks to:
-<div align="center">
-  <table>
-    <td align="center">
-      <a href="https://workos.com/?utm_campaign=github_repo&utm_medium=referral&utm_content=revealjs&utm_source=github">
-        <div>
-          <img src="https://user-images.githubusercontent.com/629429/151508669-efb4c3b3-8fe3-45eb-8e47-e9510b5f0af1.svg" width="290" alt="WorkOS">
-        </div>
-        <b>Your app, enterprise-ready.</b>
-        <div>
-          <sub>Start selling to enterprise customers with just a few lines of code. Add Single Sign-On (and more) in minutes instead of months.</sup>
-        </div>
-      </a>
-    </td>
-  </table>
-</div>
+## 使い方
 
----
+### スライド作成
 
-### Getting started
-- 🚀 [Install reveal.js](https://revealjs.com/installation)
-- 👀 [View the demo presentation](https://revealjs.com/demo)
-- 📖 [Read the documentation](https://revealjs.com/markup/)
-- 🖌 [Try the visual editor for reveal.js at Slides.com](https://slides.com/)
-- 🎬 [Watch the reveal.js video course (paid)](https://revealjs.com/course)
+以下のコマンドでローカルサーバーを起動:
 
---- 
-<div align="center">
-  MIT licensed | Copyright © 2011-2024 Hakim El Hattab, https://hakim.se
-</div>
+```
+npm start
+```
+
+ブラウザで [http://localhost:8000](http://localhost:8000) にアクセスすると、スライドをプレビューできます。
+
+### スライドをpdfでエクスポート
+
+`decktape`を使ってスライドをPDFにエクスポートできます。
+
+1. `decktape`のインストール
+
+```bash
+npm install -g decktape
+```
+
+1. PDFエクスポート
+
+以下のコマンドで`html`で書いたスライドをpdfにエクスポートできます:
+
+``` bash
+# 16:9のスライドの場合
+decktape --size 1920x1080 index.html slides.pdf
+
+# 4:3のスライドの場合
+decktape --size 1600x1200 index.html slides.pdf
+```
+
+## 免責事項
+
+- 本スライドの内容に従ったいかなる結果において著者は一切の責任を負いません
+
+## LICENSE
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+This project uses [reveal.js](https://github.com/hakimel/reveal.js) which is also licensed under the MIT License.
