@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+    <!-- Background -->
+    <rect width="800" height="400" fill="#000B2E"/>
+    
+    <!-- Stars -->
+    <g id="stars">
+        <circle cx="100" cy="100" r="1" fill="white" opacity="0.8"/>
+        <circle cx="200" cy="150" r="1" fill="white" opacity="0.7"/>
+        <circle cx="300" cy="80" r="1" fill="white" opacity="0.9"/>
+        <circle cx="700" cy="200" r="1" fill="white" opacity="0.8"/>
+        <circle cx="600" cy="250" r="1" fill="white" opacity="0.7"/>
+        <circle cx="150" cy="300" r="1" fill="white" opacity="0.9"/>
+        <circle cx="650" cy="350" r="1" fill="white" opacity="0.8"/>
+        <circle cx="450" cy="100" r="1" fill="white" opacity="0.7"/>
+    </g>
+
+    <!-- Earth's orbit -->
+    <ellipse cx="400" cy="200" rx="200" ry="150" 
+             fill="none" stroke="#465B8F" stroke-width="1" 
+             stroke-dasharray="5,5"/>
+
+    <!-- Sun -->
+    <circle cx="450" cy="200" r="40" fill="#FFD700">
+        <animate attributeName="fill" 
+                 values="#FFD700;#FFA500;#FFD700" 
+                 dur="3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Earth's position -->
+    <g id="earth-system">
+        <!-- Moon's orbit -->
+        <ellipse cx="200" cy="200" rx="50" ry="30" 
+                 fill="none" stroke="#2E4172" stroke-width="1"/>
+        
+        <!-- Earth -->
+        <circle cx="200" cy="200" r="15" fill="#4B70DD"/>
+        
+        <!-- Moon -->
+        <circle cx="150" cy="200" r="5" fill="#D3D3D3"/>
+    </g>
+
+    <!-- Labels -->
+    <text x="450" y="270" fill="white" text-anchor="middle" font-size="20">Sun</text>
+    <text x="200" y="240" fill="white" text-anchor="middle" font-size="16">Earth</text>
+    <text x="150" y="230" fill="white" text-anchor="middle" font-size="12">Moon</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 150 800 280">
+    <!-- Background -->
+    <rect width="800" height="260" fill="#000B2E"/>
+
+    <!-- Distance markers -->
+    <text x="450" y="140" fill="#90EE90" text-anchor="middle" font-size="14">
+        384,400 km
+    </text>
+
+    <!-- Earth -->
+    <g id="earth-system">
+        <!-- Earth's interior layers (simplified) -->
+        <circle cx="250" cy="120" r="50" fill="#4B70DD"/>
+        <circle cx="250" cy="120" r="45" fill="#3457B2"/>
+        
+        <!-- Barycenter point -->
+        <circle cx="274" cy="120" r="4" fill="yellow"/>
+
+        <!-- Distance from center to barycenter -->
+            <path d="M250,120 L274,120" stroke="yellow" stroke-width="3"/>
+            <text x="262" y="160" fill="yellow" font-size="12">4,671 km</text>
+    </g>
+
+    <!-- Moon -->
+    <g id="moon-system">
+        <!-- Moon -->
+        <circle cx="650" cy="120" r="15" fill="yellow"/>
+    </g>
+
+    <!-- Earth-Moon connection line -->
+    <line x1="250" y1="120" x2="650" y2="120" 
+          stroke="white" stroke-width="1" stroke-dasharray="5,5"/>
+
+    <!-- Labels -->
+    <text x="250" y="200" fill="white" text-anchor="middle" font-size="14">地球</text>
+    <text x="670" y="150" fill="white" text-anchor="middle" font-size="14">月</text>
+    <text x="274" y="140" fill="yellow" text-anchor="middle" font-size="14">バリセンター</text>
+
+    <!-- Earth rotation indicator -->
+    <circle cx="274" cy="120" r="20"
+          fill="none" stroke="#FF69B4" stroke-width="2" 
+          stroke-dasharray="5,5"/>
+    <text x="274" y="90" fill="#FF69B4" font-size="14">地球の回転</text>
+
+    <!-- Moon rotation indicator -->
+    <circle cx="274" cy="120" r="376"
+          fill="none" stroke="#FF69B4" stroke-width="2" 
+          stroke-dasharray="5,5"/>
+    <text x="650" y="90" fill="#FF69B4" font-size="14">月の回転</text>
+
+</svg>
