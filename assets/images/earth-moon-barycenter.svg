@@ -40,12 +40,12 @@
     <circle cx="274" cy="120" r="20"
           fill="none" stroke="#FF69B4" stroke-width="2" 
           stroke-dasharray="5,5"/>
-    <text x="274" y="90" fill="#FF69B4" font-size="14">地球の回転</text>
+    <text x="274" y="90" fill="#FF69B4" font-size="14">地球の公転</text>
 
     <!-- Moon rotation indicator -->
     <circle cx="274" cy="120" r="376"
           fill="none" stroke="#FF69B4" stroke-width="2" 
           stroke-dasharray="5,5"/>
-    <text x="650" y="90" fill="#FF69B4" font-size="14">月の回転</text>
+    <text x="650" y="90" fill="#FF69B4" font-size="14">月の公転</text>
 
 </svg>

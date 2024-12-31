@@ -1,115 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 50 550 170">
     <!-- Background -->
-    <rect width="800" height="600" fill="#000B2E"/>
+    <rect width="840" height="300" fill="#000B2E"/>
     
-    <!-- Moon Direction Text -->
-    <text x="650" y="300" fill="white" font-size="16" text-anchor="start">→ 月の方向</text>
-    
-    <!-- Earth Group (centered at (400,300)) -->
-    <g transform="translate(400,300)">
-        <!-- Reference circle for force explanation (just a dashed circle) -->
-        <circle r="150" fill="none" stroke="#465B8F" stroke-width="1" stroke-dasharray="5,5"/>
-        
+    <!-- Earth Group -->
+    <g transform="translate(350,140)">
         <!-- Earth's core -->
-        <circle r="100" fill="#4B70DD" />
+        <circle r="100" fill="#4B70DD"/>
 
-        <!-- Ocean layer (slightly bigger ellipse for tides) -->
-        <ellipse rx="130" ry="100" fill="none" stroke="#87CEEB" stroke-width="3" opacity="0.6"/>
+        <!-- Ocean layer -->
+        <ellipse rx="130" ry="100" 
+                 fill="none" stroke="#87CEEB" stroke-width="3" 
+                 opacity="0.6"/>
+        <text x="50" y="-100" fill="#87CEEB" font-size="14">海水面</text>
 
-        <!-- Center point -->
-        <circle r="3" fill="yellow"/>
-        <text x="10" y="5" fill="white" font-size="14">地球の中心</text>
+        <!-- Barycenter point -->
+        <circle cx="50" cy="0" r="3" fill="yellow"/>
+        <text x="10" y="-10" fill="yellow" font-size="14">バリセンター</text>
+
+        <!-- Earth rotation indicator -->
+        <circle cx="50" cy="0" r="20"
+            fill="none" stroke="#FF69B4" stroke-width="2" 
+            stroke-dasharray="5,5"/>
+        <text x="0" y="40" fill="#FF69B4" font-size="14">地球の公転</text>
 
         <!-- Force vectors at different points -->
         <!-- Right point (nearest to moon) -->
         <g transform="translate(100,0)">
-            <!-- Mark the point -->
-            <circle r="3" fill="red"/>
+            <!-- Gravitational force - stronger -->
+            <path d="M0,0 L70,0" stroke="yellow" stroke-width="2" marker-end="url(#moon-arrow)" stroke-dasharray="3,3"/>
+            <!-- Barycenter centrifugal force - constant -->
+            <path d="M0,0 L-30,0" stroke="#FFA500" stroke-width="2" marker-end="url(#centrifugal-force-arrow)" stroke-dasharray="3,3"/>
+            <!-- Resultant force -->
+            <path d="M0,0 L40,0" stroke="lime" stroke-width="2" marker-end="url(#resultant-force-arrow)"/>
             <text x="0" y="-10" fill="white" font-size="12">Point A</text>
-            <!-- Moon's gravitational force (longer arrow to indicate stronger pull) -->
-            <path d="M0,0 L50,0" 
-                  stroke="yellow" stroke-width="2" 
-                  marker-end="url(#moonGravityArrow)"/>
-            <!-- Centrifugal force (relatively shorter) -->
-            <path d="M0,0 L30,0" 
-                  stroke="#FF69B4" stroke-width="2" 
-                  marker-end="url(#centrifugalArrow)"/>
+            <!-- point -->
+            <circle r="4" fill="red"/>
         </g>
 
         <!-- Left point (furthest from moon) -->
         <g transform="translate(-100,0)">
+            <!-- Gravitational force - weaker -->
+            <path d="M0,0 L30,0" stroke="yellow" stroke-width="2" marker-end="url(#moon-arrow)" stroke-dasharray="3,3"/>
+            <!-- Barycenter centrifugal force - constant -->
+            <path d="M0,0 L-70,0" stroke="#FFA500" stroke-width="2" marker-end="url(#centrifugal-force-arrow)" stroke-dasharray="3,3"/>
+            <!-- Resultant force -->
+            <path d="M0,0 L-40,0" stroke="lime" stroke-width="2" marker-end="url(#resultant-force-arrow)"/>
+            <!-- point -->
+            <text x="-20" y="-10" fill="white" font-size="12">Point B</text>
             <circle r="3" fill="red"/>
-            <text x="0" y="-10" fill="white" font-size="12">Point B</text>
-            <!-- Moon's gravitational force (shorter arrow) -->
-            <path d="M0,0 L-40,0" 
-                  stroke="yellow" stroke-width="2" 
-                  marker-end="url(#moonGravityArrow)"/>
-            <!-- Centrifugal force (outward, same order, might be nearly the same or slightly bigger) -->
-            <path d="M0,0 L-30,0" 
-                  stroke="#FF69B4" stroke-width="2" 
-                  marker-end="url(#centrifugalArrow)"/>
         </g>
 
-        <!-- Top point -->
-        <g transform="translate(0,-100)">
-            <circle r="3" fill="red"/>
-            <text x="10" y="0" fill="white" font-size="12">Point C</text>
-            <!-- Resultant tidal force (vertical direction) -->
-            <path d="M0,0 L0,30" 
-                  stroke="lime" stroke-width="2" 
-                  marker-end="url(#resultantArrow)"/>
-        </g>
-
-        <!-- Bottom point -->
-        <g transform="translate(0,100)">
-            <circle r="3" fill="red"/>
-            <text x="10" y="0" fill="white" font-size="12">Point D</text>
-            <!-- Resultant tidal force (vertical direction) -->
-            <path d="M0,0 L0,-30" 
-                  stroke="lime" stroke-width="2" 
-                  marker-end="url(#resultantArrow)"/>
-        </g>
     </g>
 
-    <!-- Arrow Markers -->
+    <!-- Arrow Marker Definition -->
     <defs>
-        <!-- Moon's gravitational force arrow (yellow) -->
-        <marker id="moonGravityArrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+        <marker id="moon-arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
             <path d="M0,0 L10,5 L0,10 L2,5 Z" fill="yellow"/>
         </marker>
-        <!-- Centrifugal force arrow (pink) -->
-        <marker id="centrifugalArrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
-            <path d="M0,0 L10,5 L0,10 L2,5 Z" fill="#FF69B4"/>
+        <marker id="centrifugal-force-arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 L2,5 Z" fill="#FFA500"/>
         </marker>
-        <!-- Resultant tidal force arrow (lime) -->
-        <marker id="resultantArrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+        <marker id="resultant-force-arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
             <path d="M0,0 L10,5 L0,10 L2,5 Z" fill="lime"/>
         </marker>
     </defs>
 
     <!-- Legend -->
     <g transform="translate(50,50)">
-        <!-- Moon gravity legend -->
-        <path d="M0,0 L30,0" stroke="yellow" stroke-width="2" marker-end="url(#moonGravityArrow)"/>
-        <text x="40" y="5" fill="white" font-size="14">月の引力</text>
+        <path d="M-15,0 L25,0" stroke="yellow" stroke-width="1.5" marker-end="url(#moon-arrow)" stroke-dasharray="3,3"/>
+        <text x="30" y="5" fill="white" font-size="14">月の引力</text>
         
-        <!-- Centrifugal force legend -->
-        <path d="M0,30 L30,30" stroke="#FF69B4" stroke-width="2" marker-end="url(#centrifugalArrow)"/>
-        <text x="40" y="35" fill="white" font-size="14">遠心力</text>
+        <path d="M-15,30 L25,30" stroke="#FFA500" stroke-width="1.5" marker-end="url(#centrifugal-force-arrow)" stroke-dasharray="3,3"/>
+        <text x="30" y="35" fill="white" font-size="14">公転による見かけの遠心力</text>
         
-        <!-- Resultant tide force legend -->
-        <path d="M0,60 L30,60" stroke="lime" stroke-width="2" marker-end="url(#resultantArrow)"/>
-        <text x="40" y="65" fill="white" font-size="14">合力（潮汐力）</text>
-    </g>
-
-    <!-- Explanation Text -->
-    <g transform="translate(50,450)">
-        <text fill="white" font-size="14">
-            <tspan x="0" y="0">Point A: 月に最も近い点 - 引力が最大</tspan>
-            <tspan x="0" y="25">Point B: 月から最も遠い点 - 引力が最小</tspan>
-            <tspan x="0" y="50">Point C, D: 中間点 - 引力と遠心力の方向がほぼ釣り合い、</tspan>
-            <tspan x="0" y="75">            垂直方向に潮汐力が生じる</tspan>
-            <tspan x="0" y="100">結果として海水は楕円形に変形する</tspan>
-        </text>
+        <path d="M-15,60 L25,60" stroke="lime" stroke-width="1.8" marker-end="url(#resultant-force-arrow)"/>
+        <text x="30" y="65" fill="white" font-size="14">合力（潮汐力）</text>
     </g>
 </svg>

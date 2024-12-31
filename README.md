@@ -20,7 +20,7 @@ npm install
 
 以下のコマンドでローカルサーバーを起動:
 
-```
+```bash
 npm start
 ```
 
