@@ -29,24 +29,24 @@
     <!-- Earth's position -->
     <g id="earth-system">
         <!-- Moon's orbit -->
-        <ellipse cx="190" cy="200" rx="50" ry="40" 
+        <ellipse cx="590" cy="200" rx="50" ry="40" 
                  fill="none" stroke="#2E4172" stroke-width="1"/>
         
         <!-- Earth -->
-        <circle cx="200" cy="200" r="15" fill="#4B70DD"/>
+        <circle cx="600" cy="200" r="15" fill="#4B70DD"/>
         
         <!-- Moon -->
-        <circle cx="140" cy="200" r="5" fill="yellow"/>
+        <circle cx="540" cy="200" r="5" fill="yellow"/>
 
         <!-- Ocean layer -->
-        <ellipse cx="200" cy="200" rx="25" ry="16" 
+        <ellipse cx="600" cy="200" rx="30" ry="16" 
                  fill="none" stroke="#87CEEB" stroke-width="2" 
                  opacity="0.6"/>
-        <text x="210" y="185" fill="#87CEEB" font-size="14">Tidal bulge</text>
+        <text x="610" y="185" fill="#87CEEB" font-size="14">Tidal bulge</text>
         
         <!-- Tidal force-->
-        <path d="M215,200 L240,200" stroke="lime" stroke-width="2" marker-end="url(#tidal-force-arrow)"/>
-        <path d="M185,200 L160,200" stroke="lime" stroke-width="2" marker-end="url(#tidal-force-arrow)"/>
+        <path d="M615,200 L650,200" stroke="lime" stroke-width="2" marker-end="url(#tidal-force-arrow)"/>
+        <path d="M585,200 L550,200" stroke="lime" stroke-width="2" marker-end="url(#tidal-force-arrow)"/>
 
     </g>
 
@@ -59,6 +59,6 @@
 
     <!-- Labels -->
     <text x="450" y="270" fill="white" text-anchor="middle" font-size="20">Sun</text>
-    <text x="200" y="240" fill="white" text-anchor="middle" font-size="16">Earth</text>
-    <text x="140" y="220" fill="white" text-anchor="middle" font-size="12">Moon</text>
+    <text x="660" y="235" fill="white" text-anchor="middle" font-size="16">Earth on perihelion</text>
+    <text x="540" y="220" fill="white" text-anchor="middle" font-size="12">Moon</text>
 </svg>

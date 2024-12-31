@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 120 700 280">
+    <!-- Background -->
+    <rect width="700" height="280" fill="#000B2E"/>
+    
+    <!-- Stars in background -->
+    <g id="background-stars">
+        <circle cx="100" cy="100" r="1" fill="white" opacity="0.8"/>
+        <circle cx="200" cy="150" r="1" fill="white" opacity="0.7"/>
+        <circle cx="700" cy="200" r="1" fill="white" opacity="0.8"/>
+        <circle cx="600" cy="500" r="1" fill="white" opacity="0.7"/>
+        <circle cx="150" cy="450" r="1" fill="white" opacity="0.9"/>
+        <circle cx="650" cy="350" r="1" fill="white" opacity="0.8"/>
+        <circle cx="450" cy="100" r="1" fill="white" opacity="0.7"/>
+    </g>
+
+    <!-- System center point -->
+    <g transform="translate(350,150)">
+        <!-- Orbit paths -->
+        <!-- Star 1 orbit -->
+        <ellipse cx="-100" cy="0" rx="150" ry="100" 
+                 fill="none" stroke="#4169E1" stroke-width="1" 
+                 stroke-dasharray="5,5"/>
+        
+        <!-- Star 2 orbit -->
+        <ellipse cx="100" cy="0" rx="150" ry="100" 
+                 fill="none" stroke="#FF6B6B" stroke-width="1" 
+                 stroke-dasharray="5,5"/>
+
+        <!-- Barycenter -->
+        <circle r="4" fill="yellow"/>
+        <text x="0" y="-15" fill="yellow" text-anchor="middle" font-size="16">バリセンター</text>
+
+        <!-- Stars at current position -->
+        <!-- Star 1 -->
+        <circle cx="-250" cy="0" r="20" fill="#4169E1">
+            <animate attributeName="fill" 
+                     values="#4169E1;#6495ED;#4169E1" 
+                     dur="3s" repeatCount="indefinite"/>
+        </circle>
+        
+        <!-- Star 2 -->
+        <circle cx="250" cy="0" r="20" fill="#FF6B6B">
+            <animate attributeName="fill" 
+                     values="#FF6B6B;#FF8C8C;#FF6B6B" 
+                     dur="3s" repeatCount="indefinite"/>
+        </circle>
+
+    </g>
+
+    <!-- Labels -->
+    <g transform="translate(400,300)">
+        <text x="-330" y="-110" fill="#4169E1" text-anchor="middle" font-size="16">Star 1</text>
+        <text x="-330" y="-90" fill="#4169E1" text-anchor="middle" font-size="14">質量: M</text>
+        
+        <text x="240" y="-110" fill="#FF6B6B" text-anchor="middle" font-size="16">Star 2</text>
+        <text x="240" y="-90" fill="#FF6B6B" text-anchor="middle" font-size="14">質量: M</text>
+    </g>
+</svg>
